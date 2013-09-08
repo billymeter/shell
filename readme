@@ -1,0 +1,49 @@
+NAME
+        myshell - a simple shell that supports backgrounding of processes
+
+SYNOPSIS
+        myshell
+        myshell [batch file]
+
+DESCRIPTION
+        myshell is a simple shell. It supports a number of built in commands as
+        well as the ability to background processes. It can also process batch 
+        scripts when the filename to the batch file is passed to myshell as an
+        argument.
+
+    Argument list processing
+        The first argument to the shell is the filename of a batch file. All 
+        other arguments are ignored. This batch file is just a plain text 
+        file that has one command per line for the shell to process.
+
+    Commands
+        myshell supports a number of built in commands:
+            cd <directory> - Changes the current working directory to 
+            <directory>. If <directory> is not present then the current 
+            working directory is printed to the screen.
+
+            clr - Clears the screen.
+
+            dir <directory> - Lists the contents of <directory>. If 
+            <directory> is not specified then the current directory is used.
+
+            echo <comment> - Displays <comment> to the screen followed by a 
+            newline.
+
+            help - Displays the user manual for myshell.
+
+            pause - Pauses operation of the shell until 'Enter' is pressed.
+
+            quit - Quits the shell.
+
+        All other commands are assumed to be external programs and will 
+        attempt to execute them.
+
+    Features
+        myshell supports the ability to process batch files. The batch files 
+        are assumed to be plain text with one command per line. myshell will
+        terminate when the end of the file is reached.
+        myshell also supports the ability to background external processes. 
+        This can be accomplished by adding an ampersand, '&', to the end of 
+        a non-built in command. Backgrounding a process will bring you to
+        the shell prompt immediately while the process runs in the background.
